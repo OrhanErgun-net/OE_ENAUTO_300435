@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "3e7afe4a-57f8-4520-a5a3-8ead017aaebf",
+		"name": "OE_ENAUTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19363826"
+	},
+	"item": [
+		{
+			"name": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "C1sco12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "developer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic cm9vdDpEX1ZheSFfMTAm",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ietf-interfaces:interface\": {\r\n    \"name\": \"GigabitEthernet2\",\r\n    \"description\": \"Configured by RESTCONF\",\r\n    \"type\": \"iana-if-type:ethernetCsmacd\",\r\n    \"enabled\": true,\r\n    \"ietf-ip:ipv4\": {\r\n      \"address\": [\r\n        {\r\n          \"ip\": \"10.255.255.1\",\r\n          \"netmask\": \"255.255.255.0\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2",
+					"protocol": "https",
+					"host": [
+						"sandbox-iosxe-recomm-1",
+						"cisco",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"restconf",
+						"data",
+						"ietf-interfaces:interfaces",
+						"interface=GigabitEthernet2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces-state/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "C1sco12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "developer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces-state/",
+					"protocol": "https",
+					"host": [
+						"sandbox-iosxe-recomm-1",
+						"cisco",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"restconf",
+						"data",
+						"ietf-interfaces:interfaces-state",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
