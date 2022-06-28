@@ -1,0 +1,11 @@
+---
+- name: "Change the hostname"
+hosts: R1
+connection: network_cli
+tasks:
+  - name: "Apply the provided configuration"
+    cisco.ios.ios_hostname:
+      config:
+        hostname: R1_Ansible_again
+      state: merged
+    register: output
