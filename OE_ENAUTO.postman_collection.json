@@ -1,0 +1,1048 @@
+{
+	"info": {
+		"_postman_id": "3e7afe4a-57f8-4520-a5a3-8ead017aaebf",
+		"name": "OE_ENAUTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19363826"
+	},
+	"item": [
+		{
+			"name": "Module-3 - Network Device Programmability",
+			"item": [
+				{
+					"name": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces-state/",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "C1sco12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "developer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces-state/",
+							"protocol": "https",
+							"host": [
+								"sandbox-iosxe-recomm-1",
+								"cisco",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"restconf",
+								"data",
+								"ietf-interfaces:interfaces-state",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "C1sco12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "developer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic cm9vdDpEX1ZheSFfMTAm",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ietf-interfaces:interface\": {\r\n    \"name\": \"GigabitEthernet2\",\r\n    \"description\": \"Configured by RESTCONF\",\r\n    \"type\": \"iana-if-type:ethernetCsmacd\",\r\n    \"enabled\": true,\r\n    \"ietf-ip:ipv4\": {\r\n      \"address\": [\r\n        {\r\n          \"ip\": \"10.255.255.1\",\r\n          \"netmask\": \"255.255.255.0\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox-iosxe-recomm-1.cisco.com:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2",
+							"protocol": "https",
+							"host": [
+								"sandbox-iosxe-recomm-1",
+								"cisco",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"restconf",
+								"data",
+								"ietf-interfaces:interfaces",
+								"interface=GigabitEthernet2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Module-4 - Cisco DNA Center",
+			"item": [
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/system/api/v1/auth/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "devnetuser",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Cisco123!",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/system/api/v1/auth/token",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/site",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/site",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"site"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device/d354c924-f8ac-425f-b167-999f157e35e8/vlan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device/d354c924-f8ac-425f-b167-999f157e35e8/vlan",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device",
+								"d354c924-f8ac-425f-b167-999f157e35e8",
+								"vlan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device/420aab4f-ff7e-41e0-8f59-eb18c0b80759",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device/420aab4f-ff7e-41e0-8f59-eb18c0b80759",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device",
+								"420aab4f-ff7e-41e0-8f59-eb18c0b80759"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device-poller/cli/read-request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commands\": [ \"show run\" ],\r\n    \"description\": \"get real-time configuration\",\r\n    \"deviceUuids\": [ \"420aab4f-ff7e-41e0-8f59-eb18c0b80759\" ],\r\n    \"name\": \"spine1.ciscotest.com\",\r\n    \"timeout\": 10\r\n}"
+						},
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device-poller/cli/read-request",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device-poller",
+								"cli",
+								"read-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/discovery/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/discovery/",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"discovery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/discovery/1/network-device",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/discovery/1/network-device",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"discovery",
+								"1",
+								"network-device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/template-programmer/template",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/template-programmer/template",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"template-programmer",
+								"template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/event/subscription/rest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjQxOTIzZTU3MjU5NTA2YTU2YjRhYTEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYyM2YwMjlhNTcyNTk1MDZhNTZhZDljNCJdLCJ0ZW5hbnRJZCI6IjYyM2YwMjk4NTcyNTk1MDZhNTZhZDliZCIsImV4cCI6MTY1Njc2ODQ4NSwiaWF0IjoxNjU2NzY0ODg1LCJqdGkiOiI5NjhmZjRkNy1iMGE5LTRlMTctOWEyYi1kOTllOWUwZjk4NGUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuj_JtD5TwumxD6Lk0D0xmeC37WYwglbbOv_d_r0xSEuDo9-ZEDaoI6lQpqZXLHQaJU4mx-O-fyGgb5DzwBab-ZVJm566i8zud2Soip83PG9NHwQZwJAir4taXCmVAbMGEO6r6vgVivuXArjSh5sESXuO6LBMmyMoHgxW4d-M2lKgxZOMBpfFgr_q_PoGQz-UOAYGPmXaiicDtUv_EtVrwHy-0DlGkqTTJQGtgSFkwo6twxfF4OA0Tpxh1eCAKJKIs39n_eeDb6Vr8jrJAIsE6Q56RLXZjKPoRTbyUdVyk-bfnPZs-vRGrMUV6ttSC0xj0YtrD0L2li3NIRlpQNjRA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sandboxdnac2.cisco.com/dna/intent/api/v1/event/subscription/rest",
+							"protocol": "https",
+							"host": [
+								"sandboxdnac2",
+								"cisco",
+								"com"
+							],
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"event",
+								"subscription",
+								"rest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Module-5 - Cisco SD-WAN",
+			"item": [
+				{
+					"name": "https://10.10.20.90:8443/j_security_check",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "j_username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "j_password",
+									"value": "C1sco12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/j_security_check",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"j_security_check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://10.10.20.90:8443/dataservice/device",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Cookie",
+								"value": "tCTc5UzSkapm6ruU2a7k-5uuyR8gnhY7WeWFDlF2.81ac6722-a226-4411-9d5d-45c0ca7d567b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/device",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://10.10.20.90:8443/dataservice/template/device",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Cookie",
+								"value": "tCTc5UzSkapm6ruU2a7k-5uuyR8gnhY7WeWFDlF2.81ac6722-a226-4411-9d5d-45c0ca7d567b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/template/device",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"template",
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://10.10.20.90:8443/dataservice/certificate/record",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Cookie",
+								"value": "tCTc5UzSkapm6ruU2a7k-5uuyR8gnhY7WeWFDlF2.81ac6722-a226-4411-9d5d-45c0ca7d567b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/certificate/record",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"certificate",
+								"record"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://10.10.20.90:8443/dataservice/admin/user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Cookie",
+								"value": "tCTc5UzSkapm6ruU2a7k-5uuyR8gnhY7WeWFDlF2.81ac6722-a226-4411-9d5d-45c0ca7d567b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/admin/user",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"admin",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://10.10.20.90:8443/dataservice/admin/user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "Q6Sk3Dq_elHTwr69Z5-PzVpZlqLCystfsq55vIU_.81ac6722-a226-4411-9d5d-45c0ca7d567b",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"group\": [\"oegroup\"],\r\n  \"description\": \"Demo User\",\r\n  \"userName\": \"oeuser\",\r\n  \"password\": \"01230123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/admin/user",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"admin",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://10.10.20.90:8443/dataservice/device/system/status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "Q6Sk3Dq_elHTwr69Z5-PzVpZlqLCystfsq55vIU_.81ac6722-a226-4411-9d5d-45c0ca7d567b",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://10.10.20.90:8443/dataservice/device/system/status",
+							"protocol": "https",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"90"
+							],
+							"port": "8443",
+							"path": [
+								"dataservice",
+								"device",
+								"system",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Module-6 - Meraki",
+			"item": [
+				{
+					"name": "https://n313.meraki.com/api/v1/organizations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "6bec40cf957de430a6f1f2baa056b99a4fac9ea0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://n313.meraki.com/api/v1/organizations",
+							"protocol": "https",
+							"host": [
+								"n313",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://n313.meraki.com/api/v1/organizations/549236/networks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "6bec40cf957de430a6f1f2baa056b99a4fac9ea0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://n313.meraki.com/api/v1/organizations/549236/networks",
+							"protocol": "https",
+							"host": [
+								"n313",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"549236",
+								"networks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://n313.meraki.com/api/v1/networks/L_575334852396600521",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "6bec40cf957de430a6f1f2baa056b99a4fac9ea0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://n313.meraki.com/api/v1/networks/L_575334852396600521",
+							"protocol": "https",
+							"host": [
+								"n313",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"networks",
+								"L_575334852396600521"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://n313.meraki.com/api/v1/networks/L_575334852396600521",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "6bec40cf957de430a6f1f2baa056b99a4fac9ea0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Network by OE\",\r\n    \"timeZone\": \"Asia/Istanbul\",\r\n    \"tags\": [],\r\n    \"notes\": \"i did it\"\r\n}"
+						},
+						"url": {
+							"raw": "https://n313.meraki.com/api/v1/networks/L_575334852396600521",
+							"protocol": "https",
+							"host": [
+								"n313",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"networks",
+								"L_575334852396600521"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://n313.meraki.com/api/v1/networks/L_646829496481099586/devices",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "6bec40cf957de430a6f1f2baa056b99a4fac9ea0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://n313.meraki.com/api/v1/networks/L_646829496481099586/devices",
+							"protocol": "https",
+							"host": [
+								"n313",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"networks",
+								"L_646829496481099586",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

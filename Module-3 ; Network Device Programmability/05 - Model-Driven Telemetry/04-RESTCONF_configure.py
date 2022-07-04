@@ -1,13 +1,10 @@
-#!/usr/bin/python3
 import urllib3, requests, json
 
-# Disable SSL Warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Host Creds
-Host_IP = "192.168.96.121"
-UserName = "cisco"
-PassWord = "cisco"
+Host_IP = "192.168.1.211"
+UserName = "OEUser01"
+PassWord = "oe123123enauto"
 Headers={'Accept': 'application/yang-data+json',
         'Content-Type': 'application/yang-data+json'}
 
@@ -21,13 +18,13 @@ PL = json.dumps({
         "base": {
           "stream": "yang-push",
           "encoding": "encode-kvgpb",
-          "source-address": "192.168.96.121",
+          "source-address": "192.168.1.211",
           "no-synch-on-start": False,
           "xpath": "/cdp-ios-xe-oper:cdp-neighbor-details/cdp-neighbor-detail"
         },
         "mdt-receivers": [
           {
-            "address": "192.168.96.80",
+            "address": "192.168.1.9",
             "port": 57000,
             "protocol": "grpc-tcp"
           }

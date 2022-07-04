@@ -1,0 +1,4 @@
+curl -c - -X POST -k \
+https://10.10.20.90:8443/j_security_check \
+-H 'Content-Type: application/x-www-form-urlencoded' \
+-d 'j_username=admin&j_password=C1sco12345'
